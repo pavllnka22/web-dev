@@ -27,7 +27,7 @@ body {
   max-width: 500px;
 }
 
-/* 1. Header (Flexbox) */
+
 .header {
   margin-bottom: 30px;
 }
@@ -74,7 +74,7 @@ body {
   font-weight: bold;
 }
 
-/* Кнопки */
+
 .btn {
   padding: 7px 18px;
   border-radius: 2px;
@@ -121,7 +121,6 @@ body {
   font-weight: 600;
 }
 
-/* Фільтри (Flexbox) */
 .filters {
   display: flex;
   justify-content: center;
@@ -136,7 +135,7 @@ body {
   border: 1px solid #ccc;
 }
 
-/* 2. Top Teachers (Grid) */
+
 .teachers-grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -196,7 +195,6 @@ body {
   color: #999;
 }
 
-/* 3. Statistics Table */
 .table-container {
   overflow-x: auto;
 }
@@ -237,7 +235,7 @@ body {
   font-weight: bold;
 }
 
-/* 4. Carousel */
+
 .carousel {
   display: flex;
   align-items: center;
@@ -256,7 +254,6 @@ body {
   gap: 30px;
 }
 
-/* 5. About & Footer */
 .about {
   max-width: 800px;
   margin: 0 auto;
@@ -277,7 +274,6 @@ body {
   align-items: center;
 }
 
-/* 6. Попапи (Центрування та :target) */
 .modal {
   position: fixed;
   inset: 0;
@@ -364,7 +360,6 @@ body {
   flex: 1;
 }
 
-/* Використання Float для виконання вимоги 2.2 */
 .teacher-info {
   padding: 25px;
 }
@@ -425,7 +420,7 @@ body {
   clear: both;
 }
 
-/* 7. Адаптивність (@media < 768px) */
+
 @media (max-width: 767px) {
   .header__top, .header__bottom {
     flex-direction: column;
@@ -459,4 +454,8 @@ body {
     flex-direction: column;
     gap: 15px;
   }
+
+  .stats-table th:hover {
+  border-bottom: 2px solid #000;
+}
 }
