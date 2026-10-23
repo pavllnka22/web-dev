@@ -1,7 +1,145 @@
-import { randomUserMock, additionalUsers } from "./FE4U-Lab2-mock.js";
-import { getFormattedUsers, filterUsers, sortUsers, findUser } from "./lab2.js";
+/// ==========================================================================
+// 1. Прямий збір даних з ЛР2 (з гарантованим фолбеком)
+// ==========================================================================
 
-const initialTeachers = getFormattedUsers(randomUserMock, additionalUsers);
+let rawData = [];
+
+// 1. Пробуємо заберемо дані з моків ЛР2
+if (typeof randomUserMock !== "undefined" && Array.isArray(randomUserMock)) {
+  rawData = [...randomUserMock];
+}
+if (typeof additionalUsers !== "undefined" && Array.isArray(additionalUsers)) {
+  rawData = [...rawData, ...additionalUsers];
+}
+
+// 2. Якщо моків немає, ставимо замовчувальний масив
+if (rawData.length === 0) {
+  rawData = [
+    {
+      id: "1",
+      full_name: "Ihor Tkachuk",
+      course: "Chemistry",
+      age: 35,
+      gender: "Male",
+      country: "Ukraine",
+      city: "Kyiv",
+      email: "ihor_tkachuk@domain.com",
+      phone: "+380964993252",
+      b_day: "1989-05-14",
+      picture: "images/teacher_male1.png",
+      note: "Experienced chemistry tutor",
+      favorite: true,
+    },
+    {
+      id: "2",
+      full_name: "Pragg Ramesh",
+      course: "Chess",
+      age: 24,
+      gender: "Male",
+      country: "India",
+      city: "New Delhi",
+      email: "pragg@domain.com",
+      phone: "+919876543210",
+      b_day: "2000-08-10",
+      picture: null,
+      note: "Grandmaster",
+      favorite: false,
+    },
+    {
+      id: "3",
+      full_name: "Floor Jansen",
+      course: "Biology",
+      age: 41,
+      gender: "Female",
+      country: "Denmark",
+      city: "Copenhagen",
+      email: "floor@domain.com",
+      phone: "+4512345678",
+      b_day: "1983-02-21",
+      picture: null,
+      note: "Vocal coach",
+      favorite: false,
+    },
+    {
+      id: "4",
+      full_name: "John Burke",
+      course: "Computer Science",
+      age: 37,
+      gender: "Male",
+      country: "Belgium",
+      city: "Brussels",
+      email: "john_b@domain.com",
+      phone: "+3221234567",
+      b_day: "1987-11-03",
+      picture: "images/teacher_male3.png",
+      note: "Lecturer",
+      favorite: false,
+    },
+    {
+      id: "5",
+      full_name: "Ari Tang",
+      course: "Biology",
+      age: 29,
+      gender: "Female",
+      country: "China",
+      city: "Beijing",
+      email: "ari_tang@domain.com",
+      phone: "+861012345678",
+      b_day: "1995-04-12",
+      picture: "images/teacher_female2.png",
+      note: "Biologist",
+      favorite: true,
+    },
+  ];
+}
+
+// 3. Безпечно адаптуємо кожен об'єкт під макет
+const initialTeachers = rawData.map((u, index) => {
+  let name = "Teacher";
+  if (u.full_name) {
+    name = u.full_name;
+  } else if (u.name && typeof u.name === "object") {
+    name = `${u.name.first || ""} ${u.name.last || ""}`.trim();
+  } else if (typeof u.name === "string") {
+    name = u.name;
+  }
+
+  let pic = null;
+  if (typeof u.picture === "string") {
+    pic = u.picture;
+  } else if (u.picture && typeof u.picture === "object") {
+    pic = u.picture.large || u.picture.medium || u.picture.thumbnail || null;
+  }
+
+  let country = "Ukraine";
+  if (typeof u.country === "string") {
+    country = u.country;
+  } else if (u.location && u.location.country) {
+    country = u.location.country;
+  }
+
+  return {
+    id: u.id || `teacher-${index}`,
+    full_name: name,
+    course: u.course || u.subject || u.speciality || "General",
+    age:
+      u.age ||
+      (u.b_day
+        ? new Date().getFullYear() - new Date(u.b_day).getFullYear()
+        : 30),
+    gender: u.gender
+      ? u.gender.charAt(0).toUpperCase() + u.gender.slice(1)
+      : "Male",
+    country: country,
+    city: u.city || (u.location ? u.location.city : ""),
+    email: u.email || "teacher@domain.com",
+    phone: u.phone || "+380000000000",
+    b_day: u.b_day || "1990-01-01",
+    picture: pic,
+    note: u.note || u.comment || "",
+    favorite: Boolean(u.favorite),
+  };
+});
 
 const state = {
   teachers: [...initialTeachers],
@@ -191,32 +329,63 @@ function applyFiltersAndSearch() {
   if (state.searchQuery) {
     const q = state.searchQuery.toLowerCase();
     filtered = filtered.filter((t) => {
-      const matchName = t.full_name && t.full_name.toLowerCase().includes(q);
+      const matchName = t.full_name.toLowerCase().includes(q);
       const matchNote = t.note && t.note.toLowerCase().includes(q);
       const matchAge = t.age && t.age.toString() === q;
       return matchName || matchNote || matchAge;
     });
   }
 
-  const filterParams = {};
-  if (state.filters.gender)
-    filterParams.gender = state.filters.gender.toLowerCase();
-  if (state.filters.favoriteOnly) filterParams.favorite = true;
-  if (state.filters.age) {
-    const [min, max] = state.filters.age.split("-").map(Number);
-    filterParams.age = max ? { gte: min, lte: max } : { gte: min };
+  if (state.filters.gender) {
+    filtered = filtered.filter(
+      (t) => t.gender.toLowerCase() === state.filters.gender.toLowerCase(),
+    );
   }
 
-  if (Object.keys(filterParams).length > 0) {
-    filtered = filterUsers(filtered, filterParams);
+  if (state.filters.region) {
+    filtered = filtered.filter((t) => {
+      if (state.filters.region === "Europe")
+        return ["Ukraine", "Denmark", "Belgium", "UK", "Poland"].includes(
+          t.country,
+        );
+      if (state.filters.region === "Asia")
+        return ["India", "China"].includes(t.country);
+      if (state.filters.region === "USA") return t.country === "USA";
+      return true;
+    });
+  }
+
+  if (state.filters.age) {
+    const [min, max] = state.filters.age.split("-").map(Number);
+    if (max) {
+      filtered = filtered.filter((t) => t.age >= min && t.age <= max);
+    } else if (min) {
+      filtered = filtered.filter((t) => t.age >= min);
+    }
   }
 
   if (state.filters.photoOnly) {
     filtered = filtered.filter((t) => t.picture !== null);
   }
 
+  if (state.filters.favoriteOnly) {
+    filtered = filtered.filter((t) =>
+      state.favorites.some((f) => f.id === t.id),
+    );
+  }
+
   if (state.sort.field) {
-    filtered = sortUsers(filtered, state.sort.field, state.sort.order);
+    filtered.sort((a, b) => {
+      let valA = a[state.sort.field];
+      let valB = b[state.sort.field];
+
+      if (typeof valA === "string") {
+        return state.sort.order === "asc"
+          ? valA.localeCompare(valB)
+          : valB.localeCompare(valA);
+      }
+      return state.sort.order === "asc" ? valA - valB : valB - valA;
+    });
   }
 
   renderTeachers(filtered);
