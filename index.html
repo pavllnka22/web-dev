@@ -35,31 +35,37 @@
         <div class="filters">
           <label class="filter-item"
             >Age
-            <select>
-              <option>18-31</option>
-              <option>32-45</option>
+            <select id="filterAge">
+              <option value="">All</option>
+              <option value="18-31">18-31</option>
+              <option value="32-45">32-45</option>
             </select>
           </label>
+
           <label class="filter-item"
             >Region
-            <select>
-              <option>Europe</option>
-              <option>Asia</option>
-              <option>USA</option>
+            <select id="filterRegion">
+              <option value="">All</option>
+              <option value="Europe">Europe</option>
+              <option value="Asia">Asia</option>
+              <option value="USA">USA</option>
             </select>
           </label>
+
           <label class="filter-item"
             >Gender
-            <select>
-              <option>Male</option>
-              <option>Female</option>
+            <select id="filterGender">
+              <option value="">All</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
             </select>
           </label>
+
           <label class="filter-item checkbox-label">
-            <input type="checkbox" /> Only with photo
+            <input type="checkbox" id="filterPhoto" /> Only with photo
           </label>
           <label class="filter-item checkbox-label">
-            <input type="checkbox" /> Only favorites
+            <input type="checkbox" id="filterFavorites" /> Only favorites
           </label>
         </div>
 
@@ -497,6 +503,10 @@
         </div>
       </div>
     </div>
-    <script src="main.js"></script>
+    <script src="FE4U-Lab2-mock.js"></script>
+  <script src="lab2.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
   </body>
 </html>
