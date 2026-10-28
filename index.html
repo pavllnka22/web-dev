@@ -1,0 +1,516 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Teachinder</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <>
+    <header class="header">
+      <div class="header__top">
+        <h1 class="header__logo">Teachinder</h1>
+        <form class="header__search" onsubmit="event.preventDefault()">
+          <input type="text" placeholder="Name, note or age to search" />
+          <button type="submit" class="btn btn--outline">Search</button>
+        </form>
+      </div>
+      <div class="header__bottom">
+        <nav class="nav">
+          <ul class="nav__list">
+            <li><a href="#teachers" class="nav__link active">Teachers</a></li>
+            <li><a href="#statistics" class="nav__link">Statistics</a></li>
+            <li><a href="#favorites" class="nav__link">Favorites</a></li>
+            <li><a href="#about" class="nav__link">About</a></li>
+          </ul>
+        </nav>
+        <a href="#modalAddTeacher" class="btn btn--primary">Add teacher</a>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <section id="teachers" class="section">
+        <h2 class="section-title">Top Teachers</h2>
+
+        <div class="filters">
+          <label class="filter-item"
+            >Age
+            <select id="filterAge">
+              <option value="">All</option>
+              <option value="18-31">18-31</option>
+              <option value="32-45">32-45</option>
+            </select>
+          </label>
+
+          <label class="filter-item"
+            >Region
+            <select id="filterRegion">
+              <option value="">All</option>
+              <option value="Europe">Europe</option>
+              <option value="Asia">Asia</option>
+              <option value="USA">USA</option>
+            </select>
+          </label>
+
+          <label class="filter-item"
+            >Gender
+            <select id="filterGender">
+              <option value="">All</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+            </select>
+          </label>
+
+          <label class="filter-item checkbox-label">
+            <input type="checkbox" id="filterPhoto" /> Only with photo
+          </label>
+          <label class="filter-item checkbox-label">
+            <input type="checkbox" id="filterFavorites" /> Only favorites
+          </label>
+        </div>
+
+        <div class="teachers-grid">
+          <a href="#modalTeacherInfo" class="teacher-card">
+            <div class="teacher-card__avatar-box">
+              <img
+                src="images/teacher_male1.png"
+                alt="Ihor Tkachuk"
+                class="teacher-card__avatar"
+              />
+              <span class="teacher-card__fav-star">&#9733;</span>
+            </div>
+            <h3 class="teacher-card__name">Ihor Tkachuk</h3>
+            <p class="teacher-card__subject">Chemistry</p>
+            <span class="teacher-card__country">Ukraine</span>
+          </a>
+
+          <div class="teacher-card">
+            <div
+              class="teacher-card__avatar-box teacher-card__avatar-box--initials"
+            >
+              <span>P.R</span>
+            </div>
+            <h3 class="teacher-card__name">Pragg Ramesh</h3>
+            <p class="teacher-card__subject">Chess</p>
+            <span class="teacher-card__country">India</span>
+          </div>
+
+          <div class="teacher-card">
+            <div
+              class="teacher-card__avatar-box teacher-card__avatar-box--initials"
+            >
+              <span>F.J</span>
+            </div>
+            <h3 class="teacher-card__name">Floor Jansen</h3>
+            <p class="teacher-card__subject">Biology</p>
+            <span class="teacher-card__country">Denmark</span>
+          </div>
+
+          <div class="teacher-card">
+            <div class="teacher-card__avatar-box">
+              <img
+                src="images/teacher_male3.png"
+                alt="John Burke"
+                class="teacher-card__avatar"
+              />
+            </div>
+            <h3 class="teacher-card__name">John Burke</h3>
+            <p class="teacher-card__subject">Computer Science</p>
+            <span class="teacher-card__country">Belgium</span>
+          </div>
+
+          <div class="teacher-card">
+            <div class="teacher-card__avatar-box">
+              <img
+                src="images/teacher_female2.png"
+                alt="Ari Tang"
+                class="teacher-card__avatar"
+              />
+              <span class="teacher-card__fav-star">&#9733;</span>
+            </div>
+            <h3 class="teacher-card__name">Ari Tang</h3>
+            <p class="teacher-card__subject">Biology</p>
+            <span class="teacher-card__country">China</span>
+          </div>
+
+          <div class="teacher-card">
+            <div class="teacher-card__avatar-box">
+              <img
+                src="images/teacher_male2.png"
+                alt="Rachel Andrew"
+                class="teacher-card__avatar"
+              />
+            </div>
+            <h3 class="teacher-card__name">Rachel Andrew</h3>
+            <p class="teacher-card__subject">Medicine</p>
+            <span class="teacher-card__country">UK</span>
+          </div>
+
+          <div class="teacher-card">
+            <div class="teacher-card__avatar-box">
+              <img
+                src="images/teacher_female1.png"
+                alt="Ari Tang"
+                class="teacher-card__avatar"
+              />
+            </div>
+            <h3 class="teacher-card__name">Anna Muzychuk</h3>
+            <p class="teacher-card__subject">Chess</p>
+            <span class="teacher-card__country">Ukraine</span>
+          </div>
+
+          <div class="teacher-card">
+            <div
+              class="teacher-card__avatar-box teacher-card__avatar-box--initials"
+            >
+              <span>R.L</span>
+            </div>
+            <h3 class="teacher-card__name">Radoslaw Ljuboevic</h3>
+            <p class="teacher-card__subject">Physics</p>
+            <span class="teacher-card__country">Poland</span>
+          </div>
+        </div>
+        <div class="load-more-container" style="text-align: center; margin: 20px 0;">
+  <button id="btnLoadMore" class="btn btn--outline">Load more (10)</button>
+</div>
+      </section>
+
+      <hr class="divider" />
+
+      <section id="statistics" class="section">
+        <h2 class="section-title">Statistics</h2>
+
+        <div class="table-container">
+          <table class="stats-table">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th class="active-sort">Subject &#8595;</th>
+                <th>Age</th>
+                <th>Gender</th>
+                <th>Nationality</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Daisy Alexander</td>
+                <td>Chemistry</td>
+                <td>28</td>
+                <td>Female</td>
+                <td>Vietnam</td>
+              </tr>
+              <tr>
+                <td>Julia Bradley</td>
+                <td>Math</td>
+                <td>26</td>
+                <td>Female</td>
+                <td>USA</td>
+              </tr>
+              <tr>
+                <td>Rita Hart</td>
+                <td>Art</td>
+                <td>41</td>
+                <td>Female</td>
+                <td>Ireland</td>
+              </tr>
+              <tr>
+                <td>Jonathan Jacobs</td>
+                <td>Math</td>
+                <td>32</td>
+                <td>Male</td>
+                <td>England</td>
+              </tr>
+              <tr>
+                <td>Nathaniel White</td>
+                <td>Computer Science</td>
+                <td>37</td>
+                <td>Male</td>
+                <td>Austria</td>
+              </tr>
+              <tr>
+                <td>Frank Medina</td>
+                <td>English</td>
+                <td>43</td>
+                <td>Male</td>
+                <td>Italy</td>
+              </tr>
+              <tr>
+                <td>Ella Curtis</td>
+                <td>Chess</td>
+                <td>34</td>
+                <td>Female</td>
+                <td>USA</td>
+              </tr>
+              <tr>
+                <td>Claire Simmons</td>
+                <td>Art</td>
+                <td>38</td>
+                <td>Female</td>
+                <td>Netherlands</td>
+              </tr>
+              <tr>
+                <td>Benjamin Knight</td>
+                <td>Biology</td>
+                <td>44</td>
+                <td>Male</td>
+                <td>Scotland</td>
+              </tr>
+              <tr>
+                <td>Norma Rose</td>
+                <td>Statistics</td>
+                <td>36</td>
+                <td>Female</td>
+                <td>France</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="pagination">
+          <a href="#" class="pagination__link active">1</a>
+          <a href="#" class="pagination__link">2</a>
+          <a href="#" class="pagination__link">3</a>
+          <span class="pagination__dots">...</span>
+          <a href="#" class="pagination__link">Last</a>
+        </div>
+      </section>
+
+      <hr class="divider" />
+
+      <section id="favorites" class="section">
+        <h2 class="section-title">Favorites</h2>
+
+        <div class="carousel">
+          <button
+            class="carousel__arrow carousel__arrow--prev"
+            aria-label="Previous"
+          >
+            &#10094;
+          </button>
+
+          <div class="carousel__items">
+            <div class="teacher-card">
+              <div class="teacher-card__avatar-box">
+                <img
+                  src="images/teacher_male1.png"
+                  alt="Ihor Tkachuk"
+                  class="teacher-card__avatar"
+                />
+              </div>
+              <h3 class="teacher-card__name">Ihor Tkachuk</h3>
+              <p class="teacher-card__subject">Chemistry</p>
+            </div>
+            <div class="teacher-card">
+              <div
+                class="teacher-card__avatar-box teacher-card__avatar-box--initials"
+              >
+                <span>A.M</span>
+              </div>
+              <h3 class="teacher-card__name">Anna Makarevich</h3>
+              <p class="teacher-card__subject">Music</p>
+            </div>
+            <div class="teacher-card">
+              <div class="teacher-card__avatar-box">
+                <img
+                  src="images/teacher_male3.png"
+                  alt="John Burke"
+                  class="teacher-card__avatar"
+                />
+              </div>
+              <h3 class="teacher-card__name">John Burke</h3>
+              <p class="teacher-card__subject">English</p>
+            </div>
+            <div class="teacher-card">
+              <div class="teacher-card__avatar-box">
+                <img
+                  src="images/teacher_female2.png"
+                  alt="Ari Tang"
+                  class="teacher-card__avatar"
+                />
+              </div>
+              <h3 class="teacher-card__name">Ari Tang</h3>
+              <p class="teacher-card__subject">Math</p>
+            </div>
+            <div class="teacher-card">
+              <div
+                class="teacher-card__avatar-box teacher-card__avatar-box--initials"
+              >
+                <span>F.J</span>
+              </div>
+              <h3 class="teacher-card__name">Floor Jansen</h3>
+              <p class="teacher-card__subject">Vocal</p>
+            </div>
+          </div>
+
+          <button
+            class="carousel__arrow carousel__arrow--next"
+            aria-label="Next"
+          >
+            &#10095;
+          </button>
+        </div>
+      </section>
+
+      <hr class="divider" />
+
+      <section id="about" class="about">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. A atque
+          facere, hic impedit itaque molestiae sit tempore?...
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam
+          eligendi illum in inventore ipsum odio officiis omnis quisquam sed
+          tempora?
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. A atque esse
+          expedita id iusto mollitia, odit sint ullam veritatis vero?
+        </p>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <nav class="nav">
+        <ul class="nav__list">
+          <li><a href="#teachers" class="nav__link">Teachers</a></li>
+          <li><a href="#statistics" class="nav__link">Statistics</a></li>
+          <li><a href="#favorites" class="nav__link">Favorites</a></li>
+          <li><a href="#about" class="nav__link">About</a></li>
+        </ul>
+      </nav>
+      <a href="#modalAddTeacher" class="btn btn--primary">Add teacher</a>
+    </footer>
+
+    <div class="modal" id="modalAddTeacher">
+      <a href="#" class="modal__backdrop"></a>
+      <div class="modal__dialog modal__dialog--form">
+        <div class="modal__header">
+          <h3>Add Teacher</h3>
+          <a href="#" class="modal__close">&times;</a>
+        </div>
+        <form class="teacher-form" onsubmit="event.preventDefault()">
+          <div class="form-group">
+            <label for="addName">Name</label>
+            <input type="text" id="addName" placeholder="Enter name" required />
+          </div>
+          <div class="form-group">
+            <label for="addSub">Subject</label>
+            <select id="addSub">
+              <option>Mathematics</option>
+              <option>Physics</option>
+              <option>Chemistry</option>
+              <option>Computer Science</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="addCountry">Country</label>
+              <select id="addCountry">
+                <option>Ukraine</option>
+                <option>Italy</option>
+                <option>Germany</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="addCity">City</label>
+              <input type="text" id="addCity" />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="addEmail">Email</label>
+              <input type="email" id="addEmail" />
+            </div>
+            <div class="form-group">
+              <label for="addPhone">Phone</label>
+              <input type="tel" id="addPhone" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="addDob">Date of birth</label>
+            <input type="date" id="addDob" />
+          </div>
+          <div class="form-group form-group--inline">
+            <span>Gender</span>
+            <label
+              ><input type="radio" name="Gender" value="male" checked />
+              Male</label
+            >
+            <label
+              ><input type="radio" name="Gender" value="female" /> Female</label
+            >
+          </div>
+          <div class="form-group form-group--inline">
+            <label for="addBg">Background color</label>
+            <input
+              type="color"
+              id="addBg"
+              value="#ffffff"
+              class="input-color"
+            />
+          </div>
+          <div class="form-group">
+            <label for="addNotes">Notes (optional)</label>
+            <textarea id="addNotes" rows="3"></textarea>
+          </div>
+          <button type="submit" class="btn btn--submit">Add</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="modal" id="modalTeacherInfo">
+      <a href="#" class="modal__backdrop"></a>
+      <div class="modal__dialog modal__dialog--info">
+        <div class="modal__header">
+          <h3>Teacher Info</h3>
+          <a href="#" class="modal__close">&times;</a>
+        </div>
+        <div class="teacher-info">
+          <div class="teacher-info__photo-block">
+            <img
+              src="images/teacher_male1.png"
+              alt="Ihor Tkachuk"
+              class="teacher-info__photo"
+            />
+          </div>
+          <div class="teacher-info__details">
+            <div class="teacher-info__name-row">
+              <h2>Ihor Tkachuk</h2>
+              <span class="teacher-info__star active">&#9734;</span>
+            </div>
+            <h4 class="teacher-info__subject">Chemistry</h4>
+            <p class="teacher-info__meta">Kyiv, Ukraine</p>
+            <p class="teacher-info__meta">35, Male</p>
+            <p>
+              <a
+                href="mailto:ihor_tkachuk@domain.com"
+                class="teacher-info__link"
+                >ihor_tkachuk@domain.com</a
+              >
+            </p>
+            <p class="teacher-info__phone">+380964993252</p>
+          </div>
+
+          <div class="clearfix"></div>
+
+          <p class="teacher-info__bio">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab autem
+            consectetur culpa cumque, distinctio dolor dolore dolorem doloremque
+            ea explicabo facilis nam nesciunt nisi pariatur perspiciatis porro
+            quis similique temporibus veniam veritatis? A ab ad, aliquam amet
+            consequatur cupiditate debitis deserunt doloribus dolorum earum eius
+            eos minus nostrum odit omnis perferendis...
+          </p>
+          <a href="#" class="teacher-info__map-toggle">toggle map</a>
+        </div>
+      </div>
+    </div>
+    <script src="FE4U-Lab2-mock.js"></script>
+  
+  <script src="lab2.js"></script>
+  
+  <script src="main.js"></script>
+
+  </body>
+</html>
