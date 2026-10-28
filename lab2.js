@@ -1,4 +1,4 @@
-export const COURSES = [
+const COURSES = [
   "Mathematics",
   "Physics",
   "English",
@@ -13,7 +13,7 @@ export const COURSES = [
   "Statistics",
 ];
 
-export const SORTABLE_FIELDS = ["full_name", "age", "b_day", "country"];
+const SORTABLE_FIELDS = ["full_name", "age", "b_day", "country"];
 
 const PHONE_FORMATS = {
   Germany: /^\d{4}-\d{7}$/,
@@ -122,7 +122,7 @@ const fromRandomUser = (user) => {
 const toFlatUser = (user) =>
   typeof user.name === "object" ? fromRandomUser(user) : { ...user };
 
-export const formatUser = (user) => {
+const formatUser = (user) => {
   const source = toFlatUser(user);
   const b_day = source.b_day ?? source.b_date ?? null;
 
@@ -149,8 +149,7 @@ export const formatUser = (user) => {
     note: typeof source.note === "string" ? source.note : "",
   };
 };
-
-export const getFormattedUsers = (randomUsers = [], additionalUsers = []) => {
+const getFormattedUsers = (randomUsers = [], additionalUsers = []) => {
   const usersByKey = new Map();
 
   [...randomUsers, ...additionalUsers].forEach((rawUser) => {
@@ -169,16 +168,16 @@ export const getFormattedUsers = (randomUsers = [], additionalUsers = []) => {
 const startsWithCapital = (value) =>
   typeof value === "string" && /^\p{Lu}/u.test(value);
 
-export const isValidPhone = (phone, country) => {
+const isValidPhone = (phone, country) => {
   if (typeof phone !== "string") return false;
   const format = PHONE_FORMATS[country] ?? DEFAULT_PHONE_FORMAT;
   return format.test(phone);
 };
 
-export const isValidEmail = (email) =>
+const isValidEmail = (email) =>
   typeof email === "string" && EMAIL_FORMAT.test(email);
 
-export const validateUser = (user) => {
+const validateUser = (user) => {
   const errors = [];
   const capitalizedFields = ["full_name", "gender", "state", "city", "country"];
 
@@ -207,12 +206,12 @@ export const validateUser = (user) => {
   return { isValid: errors.length === 0, errors };
 };
 
-export const isValidUser = (user) => validateUser(user).isValid;
+const isValidUser = (user) => validateUser(user).isValid;
 
 // Task 3
 
 // condition: a number (exact match) or an object { gt, gte, lt, lte }
-export const matchesNumber = (value, condition) => {
+const matchesNumber = (value, condition) => {
   if (typeof value !== "number") return false;
   if (typeof condition === "number") return value === condition;
 
@@ -230,7 +229,7 @@ const equalsIgnoreCase = (a, b) =>
   typeof b === "string" &&
   a.toLowerCase() === b.toLowerCase();
 
-export const filterUsers = (users, { country, age, gender, favorite } = {}) =>
+const filterUsers = (users, { country, age, gender, favorite } = {}) =>
   users.filter(
     (user) =>
       (country === undefined || equalsIgnoreCase(user.country, country)) &&
@@ -247,7 +246,7 @@ const compareValues = (a, b, field) => {
   return String(a).localeCompare(String(b));
 };
 
-export const sortUsers = (users, field, order = "asc") => {
+const sortUsers = (users, field, order = "asc") => {
   if (!SORTABLE_FIELDS.includes(field)) {
     throw new Error(`Cannot sort by "${field}"`);
   }
@@ -271,17 +270,17 @@ export const sortUsers = (users, field, order = "asc") => {
 const includesIgnoreCase = (text, query) =>
   typeof text === "string" && text.toLowerCase().includes(query.toLowerCase());
 
-export const matchesSearch = (user, { name, note, age } = {}) =>
+const matchesSearch = (user, { name, note, age } = {}) =>
   (name === undefined || includesIgnoreCase(user.full_name, name)) &&
   (note === undefined || includesIgnoreCase(user.note, note)) &&
   (age === undefined || matchesNumber(user.age, age));
 
-export const findUser = (users, params) =>
+const findUser = (users, params) =>
   users.find((user) => matchesSearch(user, params)) ?? null;
 
 // Task 6
 
-export const getSearchPercentage = (users, params) => {
+const getSearchPercentage = (users, params) => {
   if (users.length === 0) return 0;
 
   const matched = users.filter((user) => matchesSearch(user, params)).length;

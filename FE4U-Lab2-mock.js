@@ -1,4 +1,4 @@
-export const randomUserMock = [
+const randomUserMock = [
   {
     gender: "male",
     name: { title: "Mr", first: "Norbert", last: "Weishaupt" },
@@ -19,7 +19,8 @@ export const randomUserMock = [
       salt: "nz7kIxow",
       md5: "e5a4c7f88c23a92ff703e79b95080c2b",
       sha1: "5cf24c4fc40e3d7ca2d626f0c26670a2c834f739",
-      sha256: "150c20b6af123eb7603ebb80ba42301465aea1f9df012680c5a6e17c6d5f46b5",
+      sha256:
+        "150c20b6af123eb7603ebb80ba42301465aea1f9df012680c5a6e17c6d5f46b5",
     },
     dob: { date: "1956-12-23T19:09:19.602Z", age: 65 },
     registered: { date: "2004-09-01T12:10:49.583Z", age: 17 },
@@ -53,7 +54,8 @@ export const randomUserMock = [
       salt: "uUYfF7nl",
       md5: "777720d4bf06d66800efa8950d2f5439",
       sha1: "a431174184fd105768f4852541dc31dc2d421fc0",
-      sha256: "bf9cb533527bf2679a77cc4913577badecebdc08b6a3c2b260027a33633fd5a5",
+      sha256:
+        "bf9cb533527bf2679a77cc4913577badecebdc08b6a3c2b260027a33633fd5a5",
     },
     dob: { date: "1966-07-31T21:57:32.876Z", age: 55 },
     registered: { date: "2004-06-20T11:20:57.243Z", age: 17 },
@@ -90,7 +92,8 @@ export const randomUserMock = [
       salt: "8gqeuk66",
       md5: "6e3848bb0013e407e68875188c89f9d4",
       sha1: "2fdfd5f5dbf305a6036838e151326308cbfbc33c",
-      sha256: "928e051ba3bd22a59a65a05c3d02d87fae2681e15ec50a55fc46794772f1bb13",
+      sha256:
+        "928e051ba3bd22a59a65a05c3d02d87fae2681e15ec50a55fc46794772f1bb13",
     },
     dob: { date: "1975-04-02T02:31:00.130Z", age: 46 },
     registered: { date: "2018-08-09T16:52:29.559Z", age: 3 },
@@ -124,7 +127,8 @@ export const randomUserMock = [
       salt: "dBI0MrHz",
       md5: "ffa5075e20a0fb67684c2042dbfaa2a5",
       sha1: "b9e43ddfaa2bfb06b42280bf8a26728f6e6d24ea",
-      sha256: "6f8ab1df1a442044a0a26f0892f7a672945ab95ec8a6c102d2a774ea57fded88",
+      sha256:
+        "6f8ab1df1a442044a0a26f0892f7a672945ab95ec8a6c102d2a774ea57fded88",
     },
     dob: { date: "1974-11-15T10:40:20.306Z", age: 47 },
     registered: { date: "2016-12-29T05:41:51.796Z", age: 5 },
@@ -161,7 +165,8 @@ export const randomUserMock = [
       salt: "QL8uU8Ci",
       md5: "1fd332481474935c7d8f5262cae87865",
       sha1: "4bb66c4c823b66cbbf30ced32575570b06e57b2a",
-      sha256: "94a4a049fdf0498c298e83b22a51b5a336c9751c6a0d83dafd9f13915c15ccc0",
+      sha256:
+        "94a4a049fdf0498c298e83b22a51b5a336c9751c6a0d83dafd9f13915c15ccc0",
     },
     dob: { date: "1985-09-28T12:59:41.244Z", age: 36 },
     registered: { date: "2011-11-12T05:35:59.336Z", age: 10 },
@@ -195,7 +200,8 @@ export const randomUserMock = [
       salt: "fXqngwS1",
       md5: "47f2df267eae3fb9c49bc24fabf4e0f6",
       sha1: "9c03e07bbee8a47a3edff4cdcb99a98eb35a42ba",
-      sha256: "211f9a5feafbad5ff3fad4335ad212e7680b0324dfb12965e9ed0bbea553c407",
+      sha256:
+        "211f9a5feafbad5ff3fad4335ad212e7680b0324dfb12965e9ed0bbea553c407",
     },
     dob: { date: "1986-05-08T09:19:12.021Z", age: 35 },
     registered: { date: "2010-11-11T20:29:09.690Z", age: 11 },
@@ -232,7 +238,8 @@ export const randomUserMock = [
       salt: "c8wqqkpf",
       md5: "db2be13fdeee1ac99afd2d5c1599f714",
       sha1: "e636cf16e0271a2e4c3c2dd69106df5d520545e3",
-      sha256: "f288f89234645f4093dce1be9ae117ade786fdf4c6abd12194b425e2ad943356",
+      sha256:
+        "f288f89234645f4093dce1be9ae117ade786fdf4c6abd12194b425e2ad943356",
     },
     dob: { date: "1974-08-10T01:12:04.592Z", age: 47 },
     registered: { date: "2003-04-05T17:59:08.752Z", age: 18 },
@@ -269,7 +276,8 @@ export const randomUserMock = [
       salt: "HqT3s4JX",
       md5: "aac57f7760b5648410bfd711f5cf93a0",
       sha1: "cc540165fcbc8249352d1fd2dac78644262e77a2",
-      sha256: "c2ef6fc34ea1783353c395a09f8f65684dcbe5baa66677d38078ebd85d56edd6",
+      sha256:
+        "c2ef6fc34ea1783353c395a09f8f65684dcbe5baa66677d38078ebd85d56edd6",
     },
     dob: { date: "1975-08-20T23:05:13.239Z", age: 46 },
     registered: { date: "2019-04-07T08:47:38.424Z", age: 2 },
@@ -309,7 +317,8 @@ export const randomUserMock = [
       salt: "ekpEgDHE",
       md5: "da97686cb0e79abeecf43a51b7af1e23",
       sha1: "6269704b556f3dd0935fd3de6ec817c9dd6e8f88",
-      sha256: "c4a5068d2b31e0fbc499ef8d286dcd75e6ade918f8ed5300146097f6f35f3f6c",
+      sha256:
+        "c4a5068d2b31e0fbc499ef8d286dcd75e6ade918f8ed5300146097f6f35f3f6c",
     },
     dob: { date: "1994-07-04T12:08:05.427Z", age: 27 },
     registered: { date: "2008-03-26T05:07:43.196Z", age: 13 },
@@ -346,7 +355,8 @@ export const randomUserMock = [
       salt: "MyR9iFxx",
       md5: "9804ccf57b8828466e7bac4e264da097",
       sha1: "a173efe6e94e858f44f9a4e3eabd8b9a282b05f9",
-      sha256: "125d12981fb45ef2980788b8af13f433434e1433ea5bcce3ac63e5df622cfe4c",
+      sha256:
+        "125d12981fb45ef2980788b8af13f433434e1433ea5bcce3ac63e5df622cfe4c",
     },
     dob: { date: "1981-12-12T17:49:30.416Z", age: 40 },
     registered: { date: "2011-07-08T06:17:24.923Z", age: 10 },
@@ -383,7 +393,8 @@ export const randomUserMock = [
       salt: "T4HRKqy8",
       md5: "a65cf121d950a742dd9f4586fd464613",
       sha1: "eadc224db68920a0cc730eb18cfa6ab0114f9d33",
-      sha256: "4bdbdbf588aa913f416eed3bbf8ba55704a89c75591be7206722bacad8f3c692",
+      sha256:
+        "4bdbdbf588aa913f416eed3bbf8ba55704a89c75591be7206722bacad8f3c692",
     },
     dob: { date: "1995-09-12T20:08:25.350Z", age: 26 },
     registered: { date: "2016-03-13T20:50:36.903Z", age: 5 },
@@ -417,7 +428,8 @@ export const randomUserMock = [
       salt: "5Z1OOC3c",
       md5: "4f616b8380708546136c758b7f02c23e",
       sha1: "d56ebc0641e92b694de2809b24d047fc3606249b",
-      sha256: "11ff85f8171ea5da1f1997709d28b0a43deac6a2e9279e1970039d92be5cae40",
+      sha256:
+        "11ff85f8171ea5da1f1997709d28b0a43deac6a2e9279e1970039d92be5cae40",
     },
     dob: { date: "1967-07-08T22:51:02.434Z", age: 54 },
     registered: { date: "2002-11-23T23:33:32.082Z", age: 19 },
@@ -454,7 +466,8 @@ export const randomUserMock = [
       salt: "wAVO9OPb",
       md5: "3dea9043473fb4822582a0b2ad673e77",
       sha1: "71423d900d191c9f09471edce4c061047039271e",
-      sha256: "542de3e0e01ceaadd753da8960018458bb6b69abb09b48d2b32f8e7fbc878126",
+      sha256:
+        "542de3e0e01ceaadd753da8960018458bb6b69abb09b48d2b32f8e7fbc878126",
     },
     dob: { date: "1974-05-10T02:24:28.197Z", age: 47 },
     registered: { date: "2003-09-11T19:00:02.000Z", age: 18 },
@@ -491,7 +504,8 @@ export const randomUserMock = [
       salt: "OmTjVDaO",
       md5: "adde0bce18700199d67661aa8c7fdc66",
       sha1: "a5b46da93996dcc147f037b5c246211d461e80a4",
-      sha256: "b8456cc083f487abcd273e5e2ed0112e58889832c0dd28172d0ba30daaf27836",
+      sha256:
+        "b8456cc083f487abcd273e5e2ed0112e58889832c0dd28172d0ba30daaf27836",
     },
     dob: { date: "1956-04-28T08:50:01.255Z", age: 65 },
     registered: { date: "2007-12-22T23:23:48.998Z", age: 14 },
@@ -525,7 +539,8 @@ export const randomUserMock = [
       salt: "69CKmE1k",
       md5: "53cff3dde36ad4dc4bdaae95ea60c3cc",
       sha1: "30d1e1ac753946eaf57d6b6c9fc953a53beba7f2",
-      sha256: "1c25e751c9477da82ad5025487a4bcc7bc7c57b70e5cd53e876e1d6ca317e718",
+      sha256:
+        "1c25e751c9477da82ad5025487a4bcc7bc7c57b70e5cd53e876e1d6ca317e718",
     },
     dob: { date: "1952-03-09T08:28:33.451Z", age: 69 },
     registered: { date: "2013-05-11T09:32:31.190Z", age: 8 },
@@ -562,7 +577,8 @@ export const randomUserMock = [
       salt: "FHzZ22ng",
       md5: "0cd2d1c5396fb24e34ae913f695c202b",
       sha1: "231dcbeee6ea8fde0d0a34852669532de01a1b82",
-      sha256: "c48793df9169211ffa9ac864b8b9256f8078819271865928b32a82f78a5f535b",
+      sha256:
+        "c48793df9169211ffa9ac864b8b9256f8078819271865928b32a82f78a5f535b",
     },
     dob: { date: "1971-06-08T09:57:13.975Z", age: 50 },
     registered: { date: "2008-09-04T08:52:53.199Z", age: 13 },
@@ -599,7 +615,8 @@ export const randomUserMock = [
       salt: "2D7awnZM",
       md5: "aa74499546e936547485b33982246e31",
       sha1: "94c5ca3a5395c4c931ff7d8fc73a4699ad60284d",
-      sha256: "52559bbb2ab8b897ed0ab7f516dc91215f0bb05ccbb613f7407491c865c6ba04",
+      sha256:
+        "52559bbb2ab8b897ed0ab7f516dc91215f0bb05ccbb613f7407491c865c6ba04",
     },
     dob: { date: "1959-03-24T21:00:30.775Z", age: 62 },
     registered: { date: "2016-05-08T10:11:55.005Z", age: 5 },
@@ -636,7 +653,8 @@ export const randomUserMock = [
       salt: "LIpuarZf",
       md5: "d29a1f7b867643687c28ef2f06a499c3",
       sha1: "9d16103c993c1f5066629089293e355ee0180419",
-      sha256: "47cdbedc41b73bf794ae57029dd92b936e494a4217db5f3d53bad922bd02f097",
+      sha256:
+        "47cdbedc41b73bf794ae57029dd92b936e494a4217db5f3d53bad922bd02f097",
     },
     dob: { date: "1993-12-30T02:54:32.845Z", age: 28 },
     registered: { date: "2015-08-05T09:02:51.129Z", age: 6 },
@@ -673,7 +691,8 @@ export const randomUserMock = [
       salt: "L369lyTA",
       md5: "0555a19d343478f782bdc13abbf09794",
       sha1: "a2b561c512465a573655a713210e030379d777e8",
-      sha256: "90eab29d4d2fac03a900adc96b77dfe47121f578ebade054b85717b226c4ff12",
+      sha256:
+        "90eab29d4d2fac03a900adc96b77dfe47121f578ebade054b85717b226c4ff12",
     },
     dob: { date: "1985-11-01T17:08:44.642Z", age: 36 },
     registered: { date: "2016-11-12T22:02:53.487Z", age: 5 },
@@ -710,7 +729,8 @@ export const randomUserMock = [
       salt: "rPRrv0qf",
       md5: "8c2908725310eeb7eb0f4a89a59c89b5",
       sha1: "4675141616b6d5818aba8cc848fad0864ba3a963",
-      sha256: "d36ece075761beb0fd2cbe3a8d4bf7f992b42c29ceb3be4be804a0a23bfa3001",
+      sha256:
+        "d36ece075761beb0fd2cbe3a8d4bf7f992b42c29ceb3be4be804a0a23bfa3001",
     },
     dob: { date: "1977-01-03T08:07:23.555Z", age: 44 },
     registered: { date: "2019-06-23T09:48:40.645Z", age: 2 },
@@ -747,7 +767,8 @@ export const randomUserMock = [
       salt: "HT8fnovJ",
       md5: "f545a06c74876f87573873286c89ad1d",
       sha1: "1bbd06fe67a3a74b4fb6be5db61ccb7657b00757",
-      sha256: "f96fc3e481adfc423c381a525cc5a6125e84cc230d235eea3e5176a9a66f9d46",
+      sha256:
+        "f96fc3e481adfc423c381a525cc5a6125e84cc230d235eea3e5176a9a66f9d46",
     },
     dob: { date: "1948-07-07T06:09:20.491Z", age: 73 },
     registered: { date: "2017-01-14T23:50:33.708Z", age: 4 },
@@ -784,7 +805,8 @@ export const randomUserMock = [
       salt: "SUB2OQvB",
       md5: "107f44d918d22c68cae2e84dfb4cb168",
       sha1: "36f844ce23ac44e1eacd19e05be1f8527a53c9e1",
-      sha256: "90d5acef6b726f7ba054cc2eaf24519e048ed0541237a689d0a9d9ca6a85803e",
+      sha256:
+        "90d5acef6b726f7ba054cc2eaf24519e048ed0541237a689d0a9d9ca6a85803e",
     },
     dob: { date: "1963-04-17T16:40:45.773Z", age: 58 },
     registered: { date: "2004-06-14T17:53:20.602Z", age: 17 },
@@ -821,7 +843,8 @@ export const randomUserMock = [
       salt: "BVML7Gft",
       md5: "c90f2eeabd5eb212d4c4581823ac4718",
       sha1: "ce3cc6ae7c7a9f6b344cb9b083705f8d0a718a1e",
-      sha256: "7f2bbcabcd444ad0fca0f783d513352cd275d056efcc1442f258821fa3782503",
+      sha256:
+        "7f2bbcabcd444ad0fca0f783d513352cd275d056efcc1442f258821fa3782503",
     },
     dob: { date: "1983-09-20T17:50:52.872Z", age: 38 },
     registered: { date: "2017-07-12T16:14:30.322Z", age: 4 },
@@ -858,7 +881,8 @@ export const randomUserMock = [
       salt: "Ra5J9sYc",
       md5: "bc403ba975333724792edabdc604c0e1",
       sha1: "63989e719f436ff6341dab19159562575555761a",
-      sha256: "04aa7449271a5e3b4dcc23943eec9bd81e437cae974ef025ac189164d14cf10a",
+      sha256:
+        "04aa7449271a5e3b4dcc23943eec9bd81e437cae974ef025ac189164d14cf10a",
     },
     dob: { date: "1950-11-26T15:19:28.764Z", age: 71 },
     registered: { date: "2008-05-04T12:00:05.860Z", age: 13 },
@@ -892,7 +916,8 @@ export const randomUserMock = [
       salt: "eSP4csaB",
       md5: "989b8d9617163ff0e517eaf6c1a6fd69",
       sha1: "86816882897a0bd12ba52f0ffd09064a8a8dfab6",
-      sha256: "730f78d7fe634dcda6b2d267c73073698d88da33b7cab483810cc69c893dd156",
+      sha256:
+        "730f78d7fe634dcda6b2d267c73073698d88da33b7cab483810cc69c893dd156",
     },
     dob: { date: "1972-11-21T18:04:12.259Z", age: 49 },
     registered: { date: "2007-06-03T19:46:15.377Z", age: 14 },
@@ -926,7 +951,8 @@ export const randomUserMock = [
       salt: "3QQqBnej",
       md5: "b0ddc2e3553a6eea6378b5b00956fdad",
       sha1: "180db2865049a354dd27b36c2269a7c778e8b83e",
-      sha256: "127768995f929ca6b1ac24ada5c4e43a548371cdb5b1791efbb0586ff05c4161",
+      sha256:
+        "127768995f929ca6b1ac24ada5c4e43a548371cdb5b1791efbb0586ff05c4161",
     },
     dob: { date: "1989-02-12T18:41:45.531Z", age: 32 },
     registered: { date: "2004-08-25T10:18:42.677Z", age: 17 },
@@ -963,7 +989,8 @@ export const randomUserMock = [
       salt: "niDSSeaU",
       md5: "56ddd6ef151244b4b8d5bbcfed141c56",
       sha1: "93ee7d5503c49ff558860b10bd9aac66bf0d9a74",
-      sha256: "dfb6570c4b725f4313a827db90006ee1338fb99225f87e37508f06e5f28b3f41",
+      sha256:
+        "dfb6570c4b725f4313a827db90006ee1338fb99225f87e37508f06e5f28b3f41",
     },
     dob: { date: "1968-11-13T05:41:01.302Z", age: 53 },
     registered: { date: "2011-03-13T10:12:08.860Z", age: 10 },
@@ -1000,7 +1027,8 @@ export const randomUserMock = [
       salt: "FkROdNBb",
       md5: "aa720232488f868c8d3c099883ff9b1a",
       sha1: "462197855cc567b126504fd177241969e19bdb2e",
-      sha256: "30c290547ef87daab62b49f1257600f6dd940801d5334873a3c176cbb73daf59",
+      sha256:
+        "30c290547ef87daab62b49f1257600f6dd940801d5334873a3c176cbb73daf59",
     },
     dob: { date: "1946-02-27T02:50:54.842Z", age: 75 },
     registered: { date: "2013-07-17T08:46:16.692Z", age: 8 },
@@ -1034,7 +1062,8 @@ export const randomUserMock = [
       salt: "gEQgrPXQ",
       md5: "f8e30ad2f07aca30b75ed1781bc98a5c",
       sha1: "0286ded4a32d19e5ac381b88e64036b303159e03",
-      sha256: "7e74461afa5cc9002ee1c3ac25f948549fc09fa3546f38039854f0d103c95aa8",
+      sha256:
+        "7e74461afa5cc9002ee1c3ac25f948549fc09fa3546f38039854f0d103c95aa8",
     },
     dob: { date: "1987-12-26T20:55:07.940Z", age: 34 },
     registered: { date: "2002-11-10T00:07:46.970Z", age: 19 },
@@ -1071,7 +1100,8 @@ export const randomUserMock = [
       salt: "TTODLzXU",
       md5: "866206c778c5a0b8b99bbc34414a5223",
       sha1: "f76487fb0f7f63de1f17666cbb0ff5e834fa1d54",
-      sha256: "63f625e2a3737d4162b4ae0882178a6901caf39f1085674888d0eaeaa2007587",
+      sha256:
+        "63f625e2a3737d4162b4ae0882178a6901caf39f1085674888d0eaeaa2007587",
     },
     dob: { date: "1993-10-03T01:40:10.720Z", age: 28 },
     registered: { date: "2008-07-17T07:10:21.274Z", age: 13 },
@@ -1105,7 +1135,8 @@ export const randomUserMock = [
       salt: "GwllENgQ",
       md5: "c8a3f4a68df4febf988492d47ba58e9e",
       sha1: "2cae23fb7e96b5cc71bf0a6dab5a481ef91191c4",
-      sha256: "57cc0c099649e4d308447a565e6504d1df558d84ed0dc2ff78fb7e504f057e5f",
+      sha256:
+        "57cc0c099649e4d308447a565e6504d1df558d84ed0dc2ff78fb7e504f057e5f",
     },
     dob: { date: "1954-07-15T07:55:58.285Z", age: 67 },
     registered: { date: "2012-07-20T14:46:53.999Z", age: 9 },
@@ -1142,7 +1173,8 @@ export const randomUserMock = [
       salt: "ITiYnJAD",
       md5: "461f22ec3f25f361408c868f605465c6",
       sha1: "6df198052e341d50ff724b8926c5039eda28ba54",
-      sha256: "8be8659c247ead3f01fb09001eeb426d669626b1458249c85b7f3520021a7d82",
+      sha256:
+        "8be8659c247ead3f01fb09001eeb426d669626b1458249c85b7f3520021a7d82",
     },
     dob: { date: "1997-11-21T06:35:55.528Z", age: 24 },
     registered: { date: "2018-11-04T20:11:55.803Z", age: 3 },
@@ -1179,7 +1211,8 @@ export const randomUserMock = [
       salt: "BPcSfJuI",
       md5: "07de66e955d928257c64e923190e17e1",
       sha1: "d3ebc8186d53b30bf00217fc71b8e9398f1efd44",
-      sha256: "5e97c37af303fa51a7036084da8abce97c04406003e2aaf5b014489149109165",
+      sha256:
+        "5e97c37af303fa51a7036084da8abce97c04406003e2aaf5b014489149109165",
     },
     dob: { date: "1977-03-05T13:35:14.295Z", age: 44 },
     registered: { date: "2015-01-04T20:52:30.240Z", age: 6 },
@@ -1216,7 +1249,8 @@ export const randomUserMock = [
       salt: "75hsTRAI",
       md5: "b95fdee7fe74012c413e59bfe08ff2d3",
       sha1: "c317c46c5e487c9b3e2e4febaba348c2b8199fa1",
-      sha256: "76a8e2920a63d28d118ee8d816e38b84dc581ab77b827365276c3bb3a1d1b691",
+      sha256:
+        "76a8e2920a63d28d118ee8d816e38b84dc581ab77b827365276c3bb3a1d1b691",
     },
     dob: { date: "1965-12-08T22:45:18.878Z", age: 56 },
     registered: { date: "2016-04-16T19:10:11.494Z", age: 5 },
@@ -1250,7 +1284,8 @@ export const randomUserMock = [
       salt: "dx67FTF0",
       md5: "c4c2a48ececa3bab96334d4d49a1af7e",
       sha1: "3d7fd0dc61bee080bd4cb4f440000488926ccbfd",
-      sha256: "4d911a613aaa4fa3685276d9959a43717fe1f21a60c48519625f2f2d35bd65fd",
+      sha256:
+        "4d911a613aaa4fa3685276d9959a43717fe1f21a60c48519625f2f2d35bd65fd",
     },
     dob: { date: "1956-01-28T20:25:36.209Z", age: 65 },
     registered: { date: "2011-10-13T08:23:50.033Z", age: 10 },
@@ -1287,7 +1322,8 @@ export const randomUserMock = [
       salt: "mIZ0WhOs",
       md5: "d8f773e6a31ecc1aec82e3954f112fcf",
       sha1: "b5b99dc90cb842e6aacde824b3332f80503de8db",
-      sha256: "0d5deefeeffb6eb2fa5bfe3245755177fdefbd5c496405a34e5240ab4a0b4422",
+      sha256:
+        "0d5deefeeffb6eb2fa5bfe3245755177fdefbd5c496405a34e5240ab4a0b4422",
     },
     dob: { date: "1982-04-05T14:22:44.269Z", age: 39 },
     registered: { date: "2006-05-03T07:52:29.527Z", age: 15 },
@@ -1324,7 +1360,8 @@ export const randomUserMock = [
       salt: "dRCN7liG",
       md5: "0c616d8d29a0f1e9c02056220ab2af6f",
       sha1: "13a724f4d206007279bade60cbf42ee439491c9e",
-      sha256: "cd3efc3f1c40994c125e808ee5e8a600aee7cf0a1b3b58b342f175c41998b4da",
+      sha256:
+        "cd3efc3f1c40994c125e808ee5e8a600aee7cf0a1b3b58b342f175c41998b4da",
     },
     dob: { date: "1980-04-17T20:07:31.899Z", age: 41 },
     registered: { date: "2015-07-24T16:02:07.548Z", age: 6 },
@@ -1361,7 +1398,8 @@ export const randomUserMock = [
       salt: "ae55ZwbY",
       md5: "213d6ba25f0e66e248ea4bd1647d59a7",
       sha1: "eed0a30d06903197d99a8a9d89bcd708cf90ba30",
-      sha256: "ac99a795be342770682ba972b757d4533910388f0aabfadbb0e2bd9c0d8bca99",
+      sha256:
+        "ac99a795be342770682ba972b757d4533910388f0aabfadbb0e2bd9c0d8bca99",
     },
     dob: { date: "1992-12-20T09:32:27.922Z", age: 29 },
     registered: { date: "2005-04-06T09:42:59.495Z", age: 16 },
@@ -1395,7 +1433,8 @@ export const randomUserMock = [
       salt: "v58weSKQ",
       md5: "2188af4c295f3d9b69da661872f187ee",
       sha1: "b77531a083538316d21b8c566708881e43acee3c",
-      sha256: "b431badeb6bb076cd407787ccb133635734c183987aebbd2354d982b21cb5d38",
+      sha256:
+        "b431badeb6bb076cd407787ccb133635734c183987aebbd2354d982b21cb5d38",
     },
     dob: { date: "1961-12-02T13:05:04.807Z", age: 60 },
     registered: { date: "2015-04-30T23:10:20.958Z", age: 6 },
@@ -1429,7 +1468,8 @@ export const randomUserMock = [
       salt: "i0aFFxqt",
       md5: "6187266fb6e9e11ab6a71a7c58906d8e",
       sha1: "1539bc847894a41920e3b9ca124a0bfa81d02755",
-      sha256: "44d2a2fa3b03d9d67dab6d1264f52cdee90a9e2c67ec4911a08f75cbba36fbc6",
+      sha256:
+        "44d2a2fa3b03d9d67dab6d1264f52cdee90a9e2c67ec4911a08f75cbba36fbc6",
     },
     dob: { date: "1955-11-22T15:47:38.848Z", age: 66 },
     registered: { date: "2019-07-30T22:09:21.378Z", age: 2 },
@@ -1466,7 +1506,8 @@ export const randomUserMock = [
       salt: "4GaA9vmi",
       md5: "4369efbcffb725fc93f1a39a60224fe7",
       sha1: "90e772aa793414317e73f48503407ac8106fac3d",
-      sha256: "59ded3802fdc89e715be5897d9d2fedd796116afad17246622ebac7dac81c51c",
+      sha256:
+        "59ded3802fdc89e715be5897d9d2fedd796116afad17246622ebac7dac81c51c",
     },
     dob: { date: "1994-08-26T17:01:22.484Z", age: 27 },
     registered: { date: "2002-09-15T22:51:41.849Z", age: 19 },
@@ -1503,7 +1544,8 @@ export const randomUserMock = [
       salt: "v67TjEoo",
       md5: "3493ea20f78ddb18d48cb1bb2e43e45c",
       sha1: "ea17bc4ab74eb6b4c3eb8e5e9f50023d6d79102b",
-      sha256: "fe3b701891414a35555a6533568f4e42c77dc6468155d2307fc448c1161ad745",
+      sha256:
+        "fe3b701891414a35555a6533568f4e42c77dc6468155d2307fc448c1161ad745",
     },
     dob: { date: "1951-01-16T07:15:43.883Z", age: 70 },
     registered: { date: "2018-02-06T23:18:42.902Z", age: 3 },
@@ -1540,7 +1582,8 @@ export const randomUserMock = [
       salt: "AIpc3CRG",
       md5: "a537cd446b7a2d7592fda1daef2e3873",
       sha1: "54c4e3b9aed08ea6e0dfe4358e409ff09fd97fcd",
-      sha256: "858df72b0659b1088adaf205d56481c3282d135b5952a5d7b5ba2861c18bf51c",
+      sha256:
+        "858df72b0659b1088adaf205d56481c3282d135b5952a5d7b5ba2861c18bf51c",
     },
     dob: { date: "1952-10-04T09:02:09.900Z", age: 69 },
     registered: { date: "2017-01-28T08:19:39.128Z", age: 4 },
@@ -1577,7 +1620,8 @@ export const randomUserMock = [
       salt: "0xsZ0i7n",
       md5: "14cf58c9941cc1ed89082e7fd282ded3",
       sha1: "c0d64d0927dac2176e84cf503340b4cf9d1132a2",
-      sha256: "b679bc42d9ebeb5fc83d69b64026fa8b4ecdbc067ea7b9063454492452c68dd5",
+      sha256:
+        "b679bc42d9ebeb5fc83d69b64026fa8b4ecdbc067ea7b9063454492452c68dd5",
     },
     dob: { date: "1955-10-20T18:03:04.151Z", age: 66 },
     registered: { date: "2009-04-09T15:03:27.897Z", age: 12 },
@@ -1611,7 +1655,8 @@ export const randomUserMock = [
       salt: "lgOQIEsH",
       md5: "575a107564d44d3007a71f36ca3e28bb",
       sha1: "bb3dd6b7835ce6463f566965a2115fe099889626",
-      sha256: "dd43e16eee0e602fb3a5f81519ccb86289d3e24be9815747874ecdc2fb88a12c",
+      sha256:
+        "dd43e16eee0e602fb3a5f81519ccb86289d3e24be9815747874ecdc2fb88a12c",
     },
     dob: { date: "1968-03-24T06:29:47.075Z", age: 53 },
     registered: { date: "2018-11-17T04:05:37.968Z", age: 3 },
@@ -1648,7 +1693,8 @@ export const randomUserMock = [
       salt: "kRid01Jp",
       md5: "26c51167258036712e53cdb3e4b4527a",
       sha1: "aa172ab04334cf476dd4e45ab32860277bfa14f3",
-      sha256: "fc83c35b5cb37092b6792608918e5dd5ae7c663d3b0133dc1e8ccae1392fb5c4",
+      sha256:
+        "fc83c35b5cb37092b6792608918e5dd5ae7c663d3b0133dc1e8ccae1392fb5c4",
     },
     dob: { date: "1957-01-28T03:46:41.370Z", age: 64 },
     registered: { date: "2006-06-27T02:48:40.902Z", age: 15 },
@@ -1682,7 +1728,8 @@ export const randomUserMock = [
       salt: "BWctBJbm",
       md5: "540243341a680d81c1995dabca0c566a",
       sha1: "eef6cc50708da1dfc1a05608e724b1e5c30faa1d",
-      sha256: "cc2186a6fef73a6d7a9db62b8ce8c9e57ee438d66874ae0a9fbc9bdabae34adc",
+      sha256:
+        "cc2186a6fef73a6d7a9db62b8ce8c9e57ee438d66874ae0a9fbc9bdabae34adc",
     },
     dob: { date: "1983-03-31T14:04:35.291Z", age: 38 },
     registered: { date: "2015-07-21T12:15:44.422Z", age: 6 },
@@ -1719,7 +1766,8 @@ export const randomUserMock = [
       salt: "zA7j5CJN",
       md5: "27d97d936b04d8ec99087435636ea944",
       sha1: "28472de692fb40540e9cf8bb079e554ff81f0b1f",
-      sha256: "4c0299deadd958e06146b5462d764ba3ad32eab08fd5c77a2e34f7a1735fc313",
+      sha256:
+        "4c0299deadd958e06146b5462d764ba3ad32eab08fd5c77a2e34f7a1735fc313",
     },
     dob: { date: "1957-12-04T07:34:06.971Z", age: 64 },
     registered: { date: "2011-11-11T03:44:23.638Z", age: 10 },
@@ -1753,7 +1801,8 @@ export const randomUserMock = [
       salt: "jv0s7gjk",
       md5: "1b2b4eef1e0b0a42efa960f27af88543",
       sha1: "b61161b5051582160fa61f39c839b08dbb5121ad",
-      sha256: "a517be74d9ab98c1a5b882833854ff194d6ac38904f7371c66e80ad405723b8d",
+      sha256:
+        "a517be74d9ab98c1a5b882833854ff194d6ac38904f7371c66e80ad405723b8d",
     },
     dob: { date: "1964-03-23T21:11:35.935Z", age: 57 },
     registered: { date: "2016-10-04T15:35:40.856Z", age: 5 },
@@ -1787,7 +1836,8 @@ export const randomUserMock = [
       salt: "CWtVrf4X",
       md5: "e97a39582afa2fe7c346ff5a5bd000dc",
       sha1: "4e71030cdca26242919cd4d8ce02f8237b26f218",
-      sha256: "357c1e37e82d92c7ca54bbb67e47690b213ff2baead598499daccaf0ca32269b",
+      sha256:
+        "357c1e37e82d92c7ca54bbb67e47690b213ff2baead598499daccaf0ca32269b",
     },
     dob: { date: "1948-05-30T04:28:42.593Z", age: 73 },
     registered: { date: "2010-11-06T17:46:12.923Z", age: 11 },
@@ -1803,7 +1853,7 @@ export const randomUserMock = [
   },
 ];
 
-export const additionalUsers = [
+const additionalUsers = [
   {
     gender: "male",
     title: "Mr",
@@ -1860,7 +1910,10 @@ export const additionalUsers = [
     country: "Norway",
     postcode: "3127",
     coordinates: { latitude: "57.2663", longitude: "141.0994" },
-    timezone: { offset: "+1:00", description: "Brussels, Copenhagen, Madrid, Paris" },
+    timezone: {
+      offset: "+1:00",
+      description: "Brussels, Copenhagen, Madrid, Paris",
+    },
     b_day: "1946-06-02T09:26:02.733Z",
     id: "FN02064618043",
     picture_large: "https://randomuser.me/api/portraits/women/67.jpg",
