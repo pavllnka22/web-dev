@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Teachinder</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.webdatarocks.com/latest/webdatarocks.min.css"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__top">
+        <h1 class="header__logo">Teachinder</h1>
+        <form class="header__search" onsubmit="event.preventDefault()">
+          <input type="text" placeholder="Name, note or age to search" />
+          <button type="submit" class="btn btn--outline">Search</button>
+        </form>
+      </div>
+      <div class="header__bottom">
+        <nav class="nav">
+          <ul class="nav__list">
+            <li><a href="#teachers" class="nav__link active">Teachers</a></li>
+            <li><a href="#statistics" class="nav__link">Statistics</a></li>
+            <li><a href="#favorites" class="nav__link">Favorites</a></li>
+            <li><a href="#about" class="nav__link">About</a></li>
+          </ul>
+        </nav>
+        <a href="#modalAddTeacher" class="btn btn--primary">Add teacher</a>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <section id="teachers" class="section">
+        <h2 class="section-title">Top Teachers</h2>
+
+        <div class="filters">
+          <label class="filter-item"
+            >Age
+            <select id="filterAge">
+              <option value="">All</option>
+              <option value="18-31">18-31</option>
+              <option value="32-45">32-45</option>
+            </select>
+          </label>
+
+          <label class="filter-item"
+            >Region
+            <select id="filterRegion">
+              <option value="">All</option>
+              <option value="Europe">Europe</option>
+              <option value="Asia">Asia</option>
+              <option value="USA">USA</option>
+            </select>
+          </label>
+
+          <label class="filter-item"
+            >Gender
+            <select id="filterGender">
+              <option value="">All</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+            </select>
+          </label>
+
+          <label class="filter-item checkbox-label">
+            <input type="checkbox" id="filterPhoto" /> Only with photo
+          </label>
+          <label class="filter-item checkbox-label">
+            <input type="checkbox" id="filterFavorites" /> Only favorites
+          </label>
+        </div>
+
+        <div class="teachers-grid"></div>
+
+        <div
+          class="load-more-container"
+          style="text-align: center; margin: 20px 0"
+        >
+          <button id="btnLoadMore" class="btn btn--outline">
+            Load more (10)
+          </button>
+        </div>
+      </section>
+
+      <hr class="divider" />
+
+      <section id="statistics" class="section">
+        <h2 class="section-title">Statistics</h2>
+
+        <div
+          style="
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 20px auto;
+          "
+        >
+          <div style="max-width: 350px; width: 100%">
+            <canvas id="statsPieChart"></canvas>
+          </div>
+          <div style="max-width: 350px; width: 100%">
+            <canvas id="statsGenderChart"></canvas>
+          </div>
+        </div>
+
+        <div id="wdr-component" style="margin-top: 30px"></div>
+      </section>
+
+      <hr class="divider" />
+
+      <section id="favorites" class="section">
+        <h2 class="section-title">Favorites</h2>
+
+        <div class="carousel">
+          <button
+            class="carousel__arrow carousel__arrow--prev"
+            aria-label="Previous"
+          >
+            &#10094;
+          </button>
+          <div class="carousel__items"></div>
+          <button
+            class="carousel__arrow carousel__arrow--next"
+            aria-label="Next"
+          >
+            &#10095;
+          </button>
+        </div>
+      </section>
+
+      <hr class="divider" />
+
+      <section id="about" class="about">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <nav class="nav">
+        <ul class="nav__list">
+          <li><a href="#teachers" class="nav__link">Teachers</a></li>
+          <li><a href="#statistics" class="nav__link">Statistics</a></li>
+          <li><a href="#favorites" class="nav__link">Favorites</a></li>
+          <li><a href="#about" class="nav__link">About</a></li>
+        </ul>
+      </nav>
+      <a href="#modalAddTeacher" class="btn btn--primary">Add teacher</a>
+    </footer>
+
+    <div class="modal" id="modalAddTeacher">
+      <a href="#" class="modal__backdrop"></a>
+      <div class="modal__dialog modal__dialog--form">
+        <div class="modal__header">
+          <h3>Add Teacher</h3>
+          <a href="#" class="modal__close">&times;</a>
+        </div>
+        <form class="teacher-form" onsubmit="event.preventDefault()">
+          <div class="form-group">
+            <label for="addName">Name</label>
+            <input type="text" id="addName" placeholder="Enter name" required />
+          </div>
+          <div class="form-group">
+            <label for="addSub">Subject</label>
+            <select id="addSub">
+              <option>Mathematics</option>
+              <option>Physics</option>
+              <option>Chemistry</option>
+              <option>Computer Science</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="addCountry">Country</label>
+              <select id="addCountry">
+                <option>Ukraine</option>
+                <option>Italy</option>
+                <option>Germany</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="addCity">City</label>
+              <input type="text" id="addCity" />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="addEmail">Email</label>
+              <input type="email" id="addEmail" />
+            </div>
+            <div class="form-group">
+              <label for="addPhone">Phone</label>
+              <input type="tel" id="addPhone" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="addDob">Date of birth</label>
+            <input type="date" id="addDob" />
+          </div>
+          <div class="form-group form-group--inline">
+            <span>Gender</span>
+            <label
+              ><input type="radio" name="Gender" value="male" checked />
+              Male</label
+            >
+            <label
+              ><input type="radio" name="Gender" value="female" /> Female</label
+            >
+          </div>
+          <div class="form-group form-group--inline">
+            <label for="addBg">Background color</label>
+            <input
+              type="color"
+              id="addBg"
+              value="#ffffff"
+              class="input-color"
+            />
+          </div>
+          <div class="form-group">
+            <label for="addNotes">Notes (optional)</label>
+            <textarea id="addNotes" rows="3"></textarea>
+          </div>
+          <button type="submit" class="btn btn--submit">Add</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="modal" id="modalTeacherInfo">
+      <a href="#" class="modal__backdrop"></a>
+      <div class="modal__dialog modal__dialog--info">
+        <div class="modal__header">
+          <h3>Teacher Info</h3>
+          <a href="#" class="modal__close">&times;</a>
+        </div>
+        <div class="teacher-info">
+          <div class="teacher-info__photo-block">
+            <img
+              src="images/teacher_male1.png"
+              alt="Teacher"
+              class="teacher-info__photo"
+            />
+          </div>
+          <div class="teacher-info__details">
+            <div class="teacher-info__name-row">
+              <h2>Teacher Name</h2>
+              <span class="teacher-info__star active">&#9734;</span>
+            </div>
+            <h4 class="teacher-info__subject">Subject</h4>
+            <p class="teacher-info__meta">City, Country</p>
+            <p class="teacher-info__meta">Age, Gender</p>
+            <p><a href="#" class="teacher-info__link">email@domain.com</a></p>
+            <p class="teacher-info__phone">+380000000000</p>
+          </div>
+
+          <div class="clearfix"></div>
+
+          <p class="teacher-info__bio">Notes...</p>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+    <script src="https://cdn.webdatarocks.com/latest/webdatarocks.toolbar.min.js"></script>
+    <script src="https://cdn.webdatarocks.com/latest/webdatarocks.js"></script>
+
+    <script src="FE4U-Lab2-mock.js"></script>
+    <script src="lab2.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
