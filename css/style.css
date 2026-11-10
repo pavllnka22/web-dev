@@ -174,11 +174,13 @@ body {
   border: 2px solid #ff5752;
 }
 .teacher-card__fav-star {
+  cursor: pointer;
+  z-index: 10;
   position: absolute;
-  top: 0;
-  right: 0;
-  color: #ffbb00;
+  top: 8px;
+  right: 8px;
   font-size: 20px;
+  color: #ff5752;
 }
 .teacher-card__name {
   font-size: 15px;

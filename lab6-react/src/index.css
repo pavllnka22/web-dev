@@ -1,0 +1,142 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+body {
+  background-color: #f4f6f8;
+  color: #333;
+}
+
+/* Login Page */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.login-form {
+  background: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 320px;
+}
+.login-form h2 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+.form-group {
+  margin-bottom: 15px;
+}
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.btn-login {
+  width: 100%;
+  padding: 10px;
+  background: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+.btn-login:hover {
+  background: #0056b3;
+}
+.error-message {
+  background: #f8d7da;
+  color: #721c24;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  font-size: 14px;
+  text-align: center;
+}
+
+/* Dashboard */
+.dashboard-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+}
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.btn-logout {
+  padding: 6px 12px;
+  background: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Weather Grid */
+.weather-grid {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.weather-card {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  width: 150px;
+  text-align: center;
+}
+.weather-icon {
+  font-size: 32px;
+  margin: 10px 0;
+}
+.temp-max {
+  font-weight: bold;
+  color: #e74c3c;
+}
+.temp-min {
+  color: #3498db;
+}
+.wind {
+  font-size: 12px;
+  color: #7f8c8d;
+  margin-top: 5px;
+}
+
+/* Spinner Loader */
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #007bff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

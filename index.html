@@ -100,18 +100,43 @@
             gap: 20px;
             justify-content: center;
             flex-wrap: wrap;
-            margin: 20px auto;
+            margin: 30px auto;
+            max-width: 1000px;
           "
         >
-          <div style="max-width: 350px; width: 100%">
+          <div
+            style="
+              flex: 1;
+              min-width: 280px;
+              max-width: 320px;
+              text-align: center;
+            "
+          >
             <canvas id="statsPieChart"></canvas>
           </div>
-          <div style="max-width: 350px; width: 100%">
+          <div
+            style="
+              flex: 1;
+              min-width: 280px;
+              max-width: 320px;
+              text-align: center;
+            "
+          >
             <canvas id="statsGenderChart"></canvas>
+          </div>
+          <div
+            style="
+              flex: 1;
+              min-width: 280px;
+              max-width: 320px;
+              text-align: center;
+            "
+          >
+            <canvas id="statsAgeChart"></canvas>
           </div>
         </div>
 
-        <div id="wdr-component" style="margin-top: 30px"></div>
+        <div id="wdr-component" style="margin-top: 40px"></div>
       </section>
 
       <hr class="divider" />

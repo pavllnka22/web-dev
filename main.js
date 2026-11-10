@@ -1,9 +1,7 @@
-// ==========================================================================
-// 1. Глобальні змінні та стан додатка
-// ==========================================================================
-
 let currentMap = null;
 let statsChartInstance = null;
+let genderChartInstance = null;
+let ageChartInstance = null;
 
 const state = {
   teachers: [],
@@ -38,10 +36,6 @@ const europeCountries = [
   "Italy",
 ];
 
-// ==========================================================================
-// Завдання 4: Day.js (Розрахунок днів до ДН)
-// ==========================================================================
-
 function getDaysUntilBirthday(bDayString) {
   if (!bDayString || typeof dayjs === "undefined") return null;
   const today = dayjs();
@@ -53,10 +47,6 @@ function getDaysUntilBirthday(bDayString) {
 
   return nextBirthday.diff(today, "day");
 }
-
-// ==========================================================================
-// Завдання 3: Lodash (Нормалізація об'єктів з API/моків)
-// ==========================================================================
 
 function mapApiUserToTeacher(raw, index) {
   const courses = [
@@ -161,7 +151,6 @@ function renderTeachers(list) {
   }
 
   list.forEach((teacher) => {
-    // Проверка строго по уникальному ID
     const isFav = state.favorites.some(
       (f) => String(f.id) === String(teacher.id),
     );
@@ -222,10 +211,6 @@ function getInitials(fullName) {
   return `${parts[0][0]}`.toUpperCase();
 }
 
-// ==========================================================================
-// 2. Рендеринг сітки карток
-// ==========================================================================
-
 const teachersGrid = document.querySelector(".teachers-grid");
 const favoritesCarousel = document.querySelector(".carousel__items");
 
@@ -260,10 +245,6 @@ function renderFavorites() {
     favoritesCarousel.appendChild(card);
   });
 }
-
-// ==========================================================================
-// Завдання 1 & 4: Заповнення модалки даними конкретного викладача
-// ==========================================================================
 
 function populateTeacherInfoModal(teacher) {
   const modal = document.querySelector("#modalTeacherInfo");
@@ -301,7 +282,6 @@ function populateTeacherInfoModal(teacher) {
   const phone = modal.querySelector(".teacher-info__phone");
   if (phone) phone.innerText = teacher.phone;
 
-  // Оновлення зірочки всередині модального вікна
   const starBtn = modal.querySelector(".teacher-info__star");
   if (starBtn) {
     const isFav = state.favorites.some(
@@ -318,7 +298,6 @@ function populateTeacherInfoModal(teacher) {
     };
   }
 
-  // Карта Leaflet
   let mapContainer = modal.querySelector("#teacherMap");
   if (!mapContainer) {
     mapContainer = document.createElement("div");
@@ -341,8 +320,10 @@ function populateTeacherInfoModal(teacher) {
     const lng = teacher.coordinates?.lng || 30.52;
 
     currentMap = L.map("teacherMap").setView([lat, lng], 4);
-    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-      attribution: "&copy; OpenStreetMap",
+    L.tileLayer("https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png", {
+      attribution:
+        '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+      maxZoom: 19,
     }).addTo(currentMap);
 
     L.marker([lat, lng])
@@ -353,9 +334,6 @@ function populateTeacherInfoModal(teacher) {
       .openPopup();
   }, 250);
 }
-// ==========================================================================
-// Завдання 3: Lodash (Фільтрація та Пошук)
-// ==========================================================================
 
 function applyFiltersAndSearch() {
   let filtered = _.cloneDeep(state.teachers);
@@ -434,48 +412,103 @@ if (filtersContainer) {
   });
 }
 
-// ==========================================================================
-// Завдання 2 & 5: Chart.js та WebDataRocks
-// ==========================================================================
-
 function renderStatisticsChart(teachersList) {
-  const ctx = document.getElementById("statsPieChart");
-  if (!ctx || typeof Chart === "undefined") return;
+  if (typeof Chart === "undefined") return;
 
-  const courseCounts = _.countBy(teachersList, "course");
-  const labels = _.keys(courseCounts);
-  const data = _.values(courseCounts);
+  const ctxCourse = document.getElementById("statsPieChart");
+  const ctxGender = document.getElementById("statsGenderChart");
+  const ctxAge = document.getElementById("statsAgeChart");
 
-  if (statsChartInstance) {
-    statsChartInstance.destroy();
+  if (ctxCourse) {
+    const courseCounts = _.countBy(teachersList, "course");
+    if (statsChartInstance) statsChartInstance.destroy();
+
+    statsChartInstance = new Chart(ctxCourse, {
+      type: "pie",
+      data: {
+        labels: _.keys(courseCounts),
+        datasets: [
+          {
+            data: _.values(courseCounts),
+            backgroundColor: [
+              "#FF6384",
+              "#36A2EB",
+              "#FFCE56",
+              "#4BC0C0",
+              "#9966FF",
+              "#FF9F40",
+            ],
+          },
+        ],
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { position: "bottom" },
+          title: { display: true, text: "By Subject" },
+        },
+      },
+    });
   }
 
-  statsChartInstance = new Chart(ctx, {
-    type: "pie",
-    data: {
-      labels: labels,
-      datasets: [
-        {
-          data: data,
-          backgroundColor: [
-            "#FF6384",
-            "#36A2EB",
-            "#FFCE56",
-            "#4BC0C0",
-            "#9966FF",
-            "#FF9F40",
-          ],
-        },
-      ],
-    },
-    options: {
-      responsive: true,
-      plugins: {
-        legend: { position: "bottom" },
-        title: { display: true, text: "Distribution of Teachers by Subject" },
+  if (ctxGender) {
+    const genderCounts = _.countBy(teachersList, "gender");
+    if (genderChartInstance) genderChartInstance.destroy();
+
+    genderChartInstance = new Chart(ctxGender, {
+      type: "doughnut",
+      data: {
+        labels: _.keys(genderCounts),
+        datasets: [
+          {
+            data: _.values(genderCounts),
+            backgroundColor: ["#36A2EB", "#FF6384"],
+          },
+        ],
       },
-    },
-  });
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { position: "bottom" },
+          title: { display: true, text: "By Gender" },
+        },
+      },
+    });
+  }
+
+  if (ctxAge) {
+    const ageGroups = {
+      "18-30": _.filter(teachersList, (t) => t.age >= 18 && t.age <= 30).length,
+      "31-45": _.filter(teachersList, (t) => t.age >= 31 && t.age <= 45).length,
+      "46+": _.filter(teachersList, (t) => t.age >= 46).length,
+    };
+
+    if (ageChartInstance) ageChartInstance.destroy();
+
+    ageChartInstance = new Chart(ctxAge, {
+      type: "bar",
+      data: {
+        labels: _.keys(ageGroups),
+        datasets: [
+          {
+            label: "Teachers Count",
+            data: _.values(ageGroups),
+            backgroundColor: "#4BC0C0",
+          },
+        ],
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { display: false },
+          title: { display: true, text: "By Age Group" },
+        },
+        scales: {
+          y: { beginAtZero: true, ticks: { stepSize: 1 } },
+        },
+      },
+    });
+  }
 }
 
 function initWebDataRocks(teachersList) {
@@ -509,10 +542,6 @@ function initWebDataRocks(teachersList) {
     },
   });
 }
-
-// ==========================================================================
-// 4. Ініціалізація
-// ==========================================================================
 
 async function fetchInitialUsers() {
   try {
